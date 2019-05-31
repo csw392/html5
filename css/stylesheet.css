@@ -392,7 +392,7 @@ a{
   top: 0;
   right: 0;
 }
-.board-more::before, .news-more::before{
+.board-more::before, .news-more::before, .favorite-more::before{
   color: hsla(110, 70%, 30%, 1);
 }
 .board-list, .board-more{
@@ -518,6 +518,61 @@ a{
   text-indent: 1em;
 }
 
+
+/* 인기 사이트 */
+.favorite{
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #ccc, #eee);
+  background-color: #ccc;
+  padding: 10px;
+  position: relative;
+}
+.favorite-list{
+  overflow: hidden;
+  counter-reset: number;
+  margin-top: 5px;
+}
+.favorite-list li{
+  margin-top: 5px;
+  counter-increment: number;
+  position: relative;
+}
+.favorite-list li::before{
+  content: counter(number);
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: #999;
+  padding: 0 5px;
+  border-radius: 3px;
+}
+.up, .stop, .down{
+  background: url("images/rank.png") no-repeat;
+  width: 9px;
+  height: 0;
+  padding-top: 11px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.stop{
+  background-position: 0 50%;
+}
+.down{
+  background-position: 0 100%;
+}
+.favorite-more{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 8px;
+}
+.favorite-more::before{
+  color: hsla(110,50%,30%,1);
+}
 /* 슬로건 */
 .slogan{
   background: pink;
